@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SummitDesk — Next-Level Live Spark Desk</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div id="tap-overlay" class="overlay">Tap to start audio<br><small>iOS: silent switch mutes Web Audio</small></div>
+  <header>
+    <h1>SummitDesk</h1>
+    <p>Next-level 4/8-bar live spark desk. Multi-chair step grids, recipes, chord-aware. Free. Full Audio Engine compliance.</p>
+  </header>
+  <div id="status">Synth voices ready. Tap to start.</div>
+  <div class="controls">
+    <label>BPM <input type="number" id="bpm" min="60" max="180" value="98"></label>
+    <label>Key <select id="key">
+      <option value="Am">A minor</option>
+      <option value="C">C major</option>
+      <option value="Dm">D minor</option>
+      <option value="G">G major</option>
+      <option value="Em">E minor</option>
+      <option value="F">F major</option>
+    </select></label>
+    <label>Chords <input type="text" id="chords" value="Am F C G" placeholder="Am F C G"></label>
+    <label>Bars <select id="bars">
+      <option value="4" selected>4</option>
+      <option value="8">8</option>
+    </select></label>
+    <label>Swing <input type="range" id="swing" min="0" max="60" value="0"> <span id="swing-val">0%</span></label>
+  </div>
+  <div class="mutes">
+    <label><input type="checkbox" id="mute-kick" checked> Kick</label>
+    <label><input type="checkbox" id="mute-snare" checked> Snare</label>
+    <label><input type="checkbox" id="mute-hat" checked> Hat</label>
+    <label><input type="checkbox" id="mute-bass" checked> Bass</label>
+    <label><input type="checkbox" id="mute-piano" checked> Piano</label>
+    <label><input type="checkbox" id="mute-guitar" checked> Guitar</label>
+  </div>
+  <div id="recipes" class="recipes"></div>
+  <div id="playhead-container"><div id="playhead"></div></div>
+  <div class="grids">
+    <div><h3>Kick</h3><div id="grid-kick" class="grid" data-chair="kick"></div></div>
+    <div><h3>Snare</h3><div id="grid-snare" class="grid" data-chair="snare"></div></div>
+    <div><h3>Hat</h3><div id="grid-hat" class="grid" data-chair="hat"></div></div>
+    <div><h3>Bass</h3><div id="grid-bass" class="grid" data-chair="bass"></div></div>
+    <div><h3>Piano</h3><div id="grid-piano" class="grid" data-chair="piano"></div></div>
+    <div><h3>Guitar</h3><div id="grid-guitar" class="grid" data-chair="guitar"></div></div>
+  </div>
+  <div class="buttons">
+    <button id="play">Play</button>
+    <button id="stop">Stop</button>
+    <button id="export-wav">Export WAV (folded loop)</button>
+    <button id="export-tail">Export WAV (with tail)</button>
+    <button id="export-midi">Export MIDI</button>
+  </div>
+  <pre id="punch">Acceptance checks ready. Export at 92 BPM / 8 bars for exact 1,001,739 samples.</pre>
+  <script src="app.js"></script>
+</body>
+</html>
