@@ -1,14 +1,18 @@
-body { font-family: system-ui, sans-serif; background: #111; color: #eee; margin: 0; padding: 1rem; }
-.overlay { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; z-index: 10; text-align: center; }
+body { font-family: system-ui, sans-serif; background: #111; color: #eee; margin: 0; padding: 12px; }
+header { text-align: center; margin-bottom: 12px; }
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; z-index: 100; cursor: pointer; }
 .overlay.hidden { display: none; }
-header { text-align: center; margin-bottom: 1rem; }
-.controls, .mutes, .buttons { display: flex; flex-wrap: wrap; gap: .5rem; margin: .5rem 0; justify-content: center; }
-.grids { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
-.grid { display: grid; grid-template-columns: repeat(16, 1fr); gap: 2px; background: #222; padding: 4px; border-radius: 4px; }
-.step { aspect-ratio: 1; background: #333; border-radius: 2px; cursor: pointer; }
-.step.on { background: #f60; }
-#playhead-container { height: 8px; background: #333; position: relative; margin: .5rem 0; }
-#playhead { position: absolute; top: 0; bottom: 0; width: 2px; background: #0f0; }
-#status, #punch { background: #222; padding: .5rem; border-radius: 4px; font-size: .85rem; }
-button, input, select { background: #222; color: #eee; border: 1px solid #444; padding: .3rem .6rem; border-radius: 4px; }
+.controls, .mutes, .buttons, .recipes { display: flex; flex-wrap: wrap; gap: 12px; margin: 8px 0; align-items: center; }
+.controls label, .mutes label { font-size: 0.9rem; }
+input, select, button { background: #222; color: #eee; border: 1px solid #444; padding: 6px 10px; border-radius: 4px; }
+button { cursor: pointer; }
 button:hover { background: #333; }
+#playhead-container { height: 8px; background: #333; margin: 10px 0; position: relative; border-radius: 4px; }
+#playhead { position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: #0f0; }
+.grids { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.grid { display: grid; grid-template-columns: repeat(16, 1fr); gap: 2px; background: #1a1a1a; padding: 4px; border-radius: 4px; }
+.step { height: 22px; background: #333; border-radius: 2px; cursor: pointer; }
+.step.on { background: #0a0; }
+.step:nth-child(16n+1) { border-left: 2px solid #555; }
+#punch { font-size: 0.75rem; color: #aaa; white-space: pre-wrap; margin-top: 12px; }
+#status { font-weight: bold; margin: 6px 0; }
